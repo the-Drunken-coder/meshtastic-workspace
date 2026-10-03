@@ -1,0 +1,4 @@
+.scratch/
+.DS_Store
+.trunk/*
+!.trunk/trunk.yaml

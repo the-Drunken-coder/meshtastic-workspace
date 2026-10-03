@@ -1,0 +1,12 @@
+[submodule "firmware"]
+	path = firmware
+	url = https://github.com/the-Drunken-coder/meshtastic-firmware.git
+	branch = flrc
+[submodule "protobufs"]
+	path = protobufs
+	url = https://github.com/the-Drunken-coder/meshtastic-protobufs.git
+	branch = flrc
+[submodule "python"]
+	path = python
+	url = https://github.com/the-Drunken-coder/meshtastic-python.git
+	branch = flrc

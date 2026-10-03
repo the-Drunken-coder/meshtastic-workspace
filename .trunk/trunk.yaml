@@ -1,0 +1,11 @@
+version: 0.1
+cli:
+  version: 1.25.0
+plugins:
+  sources:
+    - id: trunk
+      ref: v1.11.0
+      uri: https://github.com/trunk-io/plugins
+lint:
+  enabled:
+    - prettier@3.9.9
