@@ -20,6 +20,8 @@ cd meshtastic-workspace
 For an existing workspace clone:
 
 ```sh
+git submodule update --init
+git submodule sync --recursive
 git submodule update --init --recursive
 ```
 
@@ -40,6 +42,6 @@ git -C python switch flrc
 
 Reference workspace issue URLs in component commits and PRs. Issues are disabled on the child forks. PRs, when explicitly requested, belong to the repository whose code they change.
 
-The standalone `protobufs/` checkout owns schema changes. Firmware and Python also keep the nested protobuf checkouts expected by their existing generation tools. Their schema revisions are initially different; coordinating them and regenerating bindings is part of the future configuration implementation.
+The standalone `protobufs/` checkout owns schema changes. Firmware and Python also keep the nested protobuf checkouts expected by their existing generation tools. These checkouts fetch from our protobuf fork, preserving each project's existing schema revision. Their schema revisions are initially different; coordinating them and regenerating bindings is part of the future configuration implementation.
 
 Local research snapshots are preserved in ignored `.scratch/`. Published planning records are in GitHub Issues. The root MCP configuration targets `firmware/` for device/build tools; workspace setup does not perform device operations.

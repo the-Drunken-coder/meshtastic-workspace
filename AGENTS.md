@@ -24,7 +24,7 @@ Prefer small, clear solutions. Explain system behavior and tradeoffs in plain la
 
 Each component is a Git submodule with its own fork remote and history. Change and test code in the component that owns it. Push its commits to that fork before updating the workspace's recorded submodule commit. Keep workspace commits limited to coordination files and component revision pins.
 
-Firmware and Python retain their existing nested protobuf checkouts because their build and generation tools expect them. Their initial schema revisions differ. During an authorized schema change, coordinate the standalone schema commit, nested revision pins, generated firmware bindings, and generated Python bindings through each project's normal workflow. Generate bindings; do not hand-edit generated firmware files.
+Firmware and Python retain their existing nested protobuf checkouts because their build and generation tools expect them. Their nested submodule URLs point to the protobuf fork so schema commits from our fork can be fetched. Their initial schema revisions differ. During an authorized schema change, coordinate the standalone schema commit, nested revision pins, generated firmware bindings, and generated Python bindings through each project's normal workflow. Generate bindings; do not hand-edit generated firmware files.
 
 ## Issues and pull requests
 
