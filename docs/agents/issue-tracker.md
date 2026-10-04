@@ -2,6 +2,18 @@
 
 Specs, tickets, wayfinding maps, and decision records live in GitHub Issues on `the-Drunken-coder/meshtastic-workspace`. GitHub is the source of truth. Use the `gh` CLI with `--repo the-Drunken-coder/meshtastic-workspace`, or the matching `repos/the-Drunken-coder/meshtastic-workspace/...` API endpoint.
 
+## Artifact kinds
+
+Apply one artifact-kind label to each new artifact, alongside its triage, category, and `wayfinder:*` labels:
+
+| Artifact                                     | Label         |
+| -------------------------------------------- | ------------- |
+| Specification                                | `kind:spec`   |
+| Individual implementation or decision ticket | `kind:ticket` |
+| Wayfinder planning map                       | `kind:map`    |
+
+Create a missing kind label on this workspace tracker before publishing, then verify it on the new artifact. If label creation is unavailable, report it. Preserve existing parent labels when creating children. Scratch drafts remain unpublished working files.
+
 ## Tracker operations
 
 - Publish a spec or ticket with `gh issue create --repo the-Drunken-coder/meshtastic-workspace --title "..." --body-file <file>`.
