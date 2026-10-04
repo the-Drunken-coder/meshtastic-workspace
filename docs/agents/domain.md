@@ -2,6 +2,10 @@
 
 How the engineering skills should consume this repo's domain documentation when exploring the codebase.
 
+Paths below are relative to the workspace root, including when working inside a component. Any future `GLOSSARY.md` or `GLOSSARY-MAP.md` belongs here; firmware's restriction on documentation still applies inside `firmware/`.
+
+Decision records live in workspace GitHub Issues, following [issue-tracker.md](issue-tracker.md). When a skill asks to read or write an ADR, use those tracker records. Existing ADR files, if present, remain relevant prior decisions to read and respect; publish new decisions and revisions to the tracker.
+
 ## Before exploring, read these
 
 - **`GLOSSARY.md`** at the repo root, or
