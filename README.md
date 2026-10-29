@@ -8,7 +8,15 @@ One workspace and one issue tracker for coordinated Meshtastic development. The 
 | `protobufs/` | [meshtastic-protobufs](https://github.com/the-Drunken-coder/meshtastic-protobufs) |
 | `python/`    | [meshtastic-python](https://github.com/the-Drunken-coder/meshtastic-python)       |
 
-[All issues](https://github.com/the-Drunken-coder/meshtastic-workspace/issues) live here. The [FLRC specification](https://github.com/the-Drunken-coder/meshtastic-workspace/issues/1) includes six implementation tickets, research, and decision records. Feature implementation has not begun.
+[All issues](https://github.com/the-Drunken-coder/meshtastic-workspace/issues) live here. The [FLRC specification](https://github.com/the-Drunken-coder/meshtastic-workspace/issues/1) includes six implementation tickets, research, and decision records. The coordinated software implementation was merged in [workspace PR #8](https://github.com/the-Drunken-coder/meshtastic-workspace/pull/8) on October 4, 2026. RF and real-board acceptance remain open.
+
+## Current coordination state
+
+The [October 8 explanatory handoff](https://github.com/the-Drunken-coder/meshtastic-workspace/issues/1#issuecomment-6063525228) is the entry point for the later fork work. It separates delivered software and verified fixes from default-off experiments and unfinished hardware/reliability/RF checks.
+
+Workspace main `e872588` pins firmware `6c4e6f9`, Python `cff7d62`, and schema `82adae8`. The [coordinated merge record](https://github.com/the-Drunken-coder/meshtastic-workspace/issues/1) links the exact commits, builds and acceptance workflow. Successful native tests and board builds do not close real-board acceptance, prove field performance, or approve a normal FLRC transmission profile.
+
+This workspace coordinates the Meshtastic forks. The later standalone W12 FLRC network experiment is separate work, not a new set of component pins in this repository. Keep its source and results separate from the fork's preserved evidence. Project specifications and verification records for these forks remain in the workspace issue tracker.
 
 ## Open the workspace
 
@@ -42,6 +50,6 @@ git -C python switch flrc
 
 Reference workspace issue URLs in component commits and PRs. Issues are disabled on the child forks. PRs, when explicitly requested, belong to the repository whose code they change.
 
-The standalone `protobufs/` checkout owns schema changes. Firmware and Python also keep the nested protobuf checkouts expected by their existing generation tools. These checkouts fetch from our protobuf fork, preserving each project's existing schema revision. Their schema revisions are initially different; coordinating them and regenerating bindings is part of the future configuration implementation.
+The standalone `protobufs/` checkout owns schema changes. Firmware and Python also keep the nested protobuf checkouts expected by their existing generation tools. These checkouts fetch from our protobuf fork, preserving each project's existing schema revision. The initial schema revisions differed. The coordinated implementation generated compatible firmware and Python bindings and recorded the reviewed component pins together. Keep those pins coordinated; do not treat their historical mismatch as unfinished configuration implementation.
 
 Local research snapshots are preserved in ignored `.scratch/`. Published planning records are in GitHub Issues. The root MCP configuration targets `firmware/` for device/build tools; workspace setup does not perform device operations.
